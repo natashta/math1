@@ -4,7 +4,6 @@ export default class Daemon extends Character {
   constructor() {
     super();
     this.type = Daemon;
-    this.defence = 25;
-    this.attack = 10;
+    this._attack = 10;
   }
 }

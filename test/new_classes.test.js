@@ -1,19 +1,5 @@
-import Character from '../src/js/base_class';
 import Daemon from '../src/js/daemon_class';
 import Magician from '../src/js/magician_class';
-
-test('Создание персонажа с заданными свойствами', () => {
-  const character = new Character();
-  const expected = {
-    level: 1,
-    health: 100,
-    attack: 0,
-    defence: 0,
-    distance: 1,
-    stoned: false,
-  };
-  expect(character).toEqual(expected);
-});
 
 test('Атака Daemon на расстоянии без дурмана', () => {
   const expected = 60;
