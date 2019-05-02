@@ -1,6 +1,14 @@
 import Daemon from '../src/js/daemon_class';
 import Magician from '../src/js/magician_class';
 
+test('Атака Magician без расстояния без stoned', () => {
+  const expected = 100;
+  const magician = new Magician('Gandalf');
+  magician.distance = 1; // Стоит на соседней клетке
+  const received = magician.attack;
+  expect(received).toBe(expected);
+});
+
 test('Атака Daemon на расстоянии без stoned', () => {
   const expected = 60;
   const daemon = new Daemon('Azrael');

@@ -2,7 +2,7 @@ export default class Character {
   constructor(name) {
     this.name = name;
     this.stoned = false;
-    this.attack = undefined;
+    this.attack = 100;
   }
 
   get stoned() {
@@ -16,7 +16,7 @@ export default class Character {
   }
 
   get attack() {
-    let attack = (100 - (this.distance - 1) * 10);
+    let attack = (this._attack - (this.distance - 1) * 10);
 
     if (this.stoned === true) {
       attack -= Math.log2(this.distance) * 5;
