@@ -1,19 +1,8 @@
 export default class Character {
-  constructor() {
-    this.level = 1;
-    this.health = 100;
-    this.attack = 0;
-    this.distance = 1;
+  constructor(name) {
+    this.name = name;
     this.stoned = false;
-  }
-
-  get distance() {
-    return this._distance;
-  }
-
-  set distance(prop) {
-    this._distance = prop;
-    return this.distance;
+    this.attack = undefined;
   }
 
   get stoned() {
@@ -21,15 +10,15 @@ export default class Character {
   }
 
   set stoned(value) {
-    if (value === 'stoned') {
+    if (value === true) {
       this._stoned = true;
     }
   }
 
   get attack() {
-    let attack = this._attack * (100 - (this.distance - 1) * 10) / 10;
+    let attack = (100 - (this.distance - 1) * 10);
 
-    if (this.stoned) {
+    if (this.stoned === true) {
       attack -= Math.log2(this.distance) * 5;
     }
 
